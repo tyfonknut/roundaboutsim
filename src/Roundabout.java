@@ -7,10 +7,19 @@ public class Roundabout
 {
     int speedLimit;
 
+
     public Roundabout(int roundaboutSize)
     {
         ArrayList<Position> roundabout = new ArrayList(roundaboutSize);
 
+        for(int i = 0; i <= roundaboutSize; i++)
+        {
+            if(i%20 == 0)
+            {
 
+            }
+        }
     }
+
+
 }
