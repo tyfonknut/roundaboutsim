@@ -5,6 +5,6 @@ public class Program
 {
     public static void main(String[] args)
     {
-        Roundabout roundabout = new Roundabout(50);
+        RoadSegment segment = new RoadSegment();
     }
 }

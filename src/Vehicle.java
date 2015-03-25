@@ -18,6 +18,11 @@ public class Vehicle
         this.position = position;
     }
 
+    protected void setNextPosition(Position position)
+    {
+        nextPosition = position;
+    }
+
     protected Position getPosition()
     {
         return position;
@@ -27,5 +32,10 @@ public class Vehicle
     {
         position.setOcupied();
         if(!nextPosition.getOcupied())
+        {
+            position.setOcupied();
+            position = nextPosition;
+            System.out.println("Current position: " + position);
+        }
     }
 }
