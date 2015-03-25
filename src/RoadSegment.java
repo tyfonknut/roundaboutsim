@@ -9,12 +9,19 @@ public class RoadSegment
     int intersection;
     int timer;
     Position spawnPoint;
+    public ArrayList<Position> segment;
 
     public RoadSegment()
     {
-        ArrayList<Position> segment = new ArrayList<Position>(10);
+        segment = new ArrayList<Position>(10);
         timer = 0;
         spawnPoint = segment.get(0);
+    }
+
+    public Position getNext(Position currentPosition){
+        int current = segment.indexOf(currentPosition);
+
+        return currentPosition;
     }
 
     private void spawner()

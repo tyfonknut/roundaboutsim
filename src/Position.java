@@ -3,12 +3,12 @@
  */
 public class Position
 {
-    boolean ocupied;
+    boolean occupied;
     boolean intersection;
 
     public Position()
     {
-        ocupied = false;
+        occupied = false;
         intersection = false;
     }
 
@@ -17,13 +17,13 @@ public class Position
         intersection = !intersection;
     }
 
-    public void setOcupied()
+    public void setOccupied()
     {
-        ocupied = !ocupied;
+        occupied = !occupied;
     }
 
-    public boolean getOcupied()
+    public boolean getOccupied()
     {
-        return ocupied;
+        return occupied;
     }
 }

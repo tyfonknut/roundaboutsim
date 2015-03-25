@@ -30,10 +30,10 @@ public class Vehicle
 
     public void act()
     {
-        position.setOcupied();
-        if(!nextPosition.getOcupied())
+        position.setOccupied();
+        if(!nextPosition.getOccupied())
         {
-            position.setOcupied();
+            position.setOccupied();
             position = nextPosition;
             System.out.println("Current position: " + position);
         }
