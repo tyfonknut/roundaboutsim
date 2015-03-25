@@ -5,11 +5,12 @@ import java.util.ArrayList;
  */
 public class Roundabout
 {
-    int roundaboutSize;
     int speedLimit;
 
-    public Roundabout()
+    public Roundabout(int roundaboutSize)
     {
-        ArrayList<Position> roundabout = new ArrayList();
+        ArrayList<Position> roundabout = new ArrayList(roundaboutSize);
+
+
     }
 }
