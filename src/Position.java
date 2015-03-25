@@ -4,12 +4,22 @@
 public class Position
 {
     boolean ocupied;
-    int intersection;
+    boolean intersection;
 
     public Position()
     {
         ocupied = false;
+        intersection = false;
+    }
 
+    public void setIntersection()
+    {
+        intersection = !intersection;
+    }
+
+    public void setOcupied()
+    {
+        ocupied = !ocupied;
     }
 
     public boolean getOcupied()
