@@ -9,28 +9,30 @@ public class RoadSegment
     int intersection;
     int timer;
     Position spawnPoint;
-    public ArrayList<Position> segment;
+    boolean spawned;
+    Vehicle vehicle;
 
     public RoadSegment()
     {
-        segment = new ArrayList<Position>(10);
+        ArrayList<Position> segment = new ArrayList<Position>(10);
         timer = 0;
         spawnPoint = segment.get(0);
+        spawned = false;
+        vehicle = new Vehicle(spawnPoint);
     }
 
-    public Position getNext(Position currentPosition){
-        int current = segment.indexOf(currentPosition);
-
-        return currentPosition;
-    }
-
-    private void spawner()
+    public void simulate(int numSteps)
     {
-        timer ++;
-        if(timer%10 == 0)
+        for(int step = 1;step < numSteps; step++)
         {
-            Vehicle vehicle = new Vehicle(spawnPoint);
+            simulateOneStep();
         }
+    }
+
+    private void simulateOneStep()
+    {
+        vehicle.setNextPosition();
+        vehicle.act();
     }
 
     public void setIntersection(int position)
