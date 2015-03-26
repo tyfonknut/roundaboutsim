@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * Created by Robin on 25.03.2015.
  */
-public class Roundabout
+public class Roundabout implements Road
 {
     int speedLimit;
 

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Created by Robin on 25.03.2015.
  */
-public class RoadSegment
+public class RoadSegment implements Road
 {
     int speedLimit;
     int intersection;
