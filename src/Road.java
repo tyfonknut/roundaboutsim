@@ -4,6 +4,6 @@
 public abstract class Road {
 
 
-    public abstract void act(int length);
+    public abstract void Road(int length);
 
 }
