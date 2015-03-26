@@ -3,7 +3,6 @@
  */
 public abstract class Road {
 
-
     public abstract void Road(int length);
 
 }
