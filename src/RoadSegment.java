@@ -1,4 +1,7 @@
+import javafx.geometry.Pos;
+
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 /**
  * Created by Robin on 25.03.2015.
@@ -8,17 +11,19 @@ public class RoadSegment implements Road
     int speedLimit;
     int intersection;
     int timer;
-    Position spawnPoint;
-    boolean spawned;
     Vehicle vehicle;
+    ArrayList segment;
 
     public RoadSegment()
     {
-        ArrayList<Position> segment = new ArrayList<Position>(10);
+        segment = new ArrayList(10);
         timer = 0;
-        spawnPoint = segment.get(0);
-        spawned = false;
-        vehicle = new Vehicle(spawnPoint);
+    }
+
+    public Vehicle spawnVehicle()
+    {
+        Vehicle vehicle = new Vehicle(this);
+        return vehicle;
     }
 
     public void simulate(int numSteps)
@@ -31,7 +36,7 @@ public class RoadSegment implements Road
 
     private void simulateOneStep()
     {
-        vehicle.setNextPosition();
+
         vehicle.act();
     }
 

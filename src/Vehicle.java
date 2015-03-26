@@ -3,39 +3,32 @@
  */
 public class Vehicle
 {
-    private double speedMod;
-    private double accel;
-    private Position position;
-    private Position nextPosition;
+    private Road road;
+    private int index;
 
-    public Vehicle(Position position)
+    public Vehicle(Road road, int index)
     {
-        this.position = position;
+        this.road = road;
+        this.index = index;
     }
 
-    protected void setPosition(Position position)
+    protected void setIndex(int index)
     {
-        this.position = position;
+
     }
 
-    protected void setNextPosition(Position position)
+    protected void setNextIndex(int nextIndex)
     {
-        nextPosition = position;
+
     }
 
-    protected Position getPosition()
+    protected int getIndex()
     {
-        return position;
+        return index;
     }
 
     public void act()
     {
-        position.setOccupied();
-        if(!nextPosition.getOccupied())
-        {
-            position.setOccupied();
-            position = nextPosition;
-            System.out.println("Current position: " + position);
-        }
+
     }
 }
