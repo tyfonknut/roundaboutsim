@@ -11,7 +11,8 @@ public class RoadSegment implements Road
     int speedLimit;
     int intersection;
     int timer;
-    Vehicle vehicle;
+    boolean freeIndex;
+    ArrayList<Vehicle> vehicleList;
     ArrayList segment;
 
     public RoadSegment()
@@ -20,28 +21,43 @@ public class RoadSegment implements Road
         timer = 0;
     }
 
-    public Vehicle spawnVehicle()
+    public void spawnVehicle()
     {
-        Vehicle vehicle = new Vehicle(this);
-        return vehicle;
+        Vehicle vehicle = new Vehicle(this, 0);
+        vehicleList.add(vehicle);
     }
 
     public void simulate(int numSteps)
     {
-        for(int step = 1;step < numSteps; step++)
+        for(int step = 0;step < numSteps; step++)
         {
+            spawnVehicle();
             simulateOneStep();
         }
+    }
+
+    public boolean seeIfFree(int index)
+    {
+        boolean isFree = true;
+        for(Vehicle vehicle : vehicleList)
+        {
+            if(vehicle.getIndex() == index)
+            {
+                isFree = false;
+            }
+        }
+        return isFree;
     }
 
     private void simulateOneStep()
     {
 
-        vehicle.act();
+        for(Vehicle vehicle : vehicleList)
+        {
+            vehicle.act();
+            System.out.print("Vehicle number: " + vehicleList.indexOf(vehicle));
+            System.out.println(" On position: " + vehicle.getIndex());
+        }
     }
 
-    public void setIntersection(int position)
-    {
-        intersection = position;
-    }
 }

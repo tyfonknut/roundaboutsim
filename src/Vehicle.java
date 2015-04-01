@@ -3,10 +3,11 @@
  */
 public class Vehicle
 {
-    private Road road;
+    private RoadSegment road;
     private int index;
+    private int nextIndex;
 
-    public Vehicle(Road road, int index)
+    public Vehicle(RoadSegment road, int index)
     {
         this.road = road;
         this.index = index;
@@ -14,12 +15,12 @@ public class Vehicle
 
     protected void setIndex(int index)
     {
-
+        this.index = index;
     }
 
     protected void setNextIndex(int nextIndex)
     {
-
+        this.nextIndex = nextIndex;
     }
 
     protected int getIndex()
@@ -29,6 +30,9 @@ public class Vehicle
 
     public void act()
     {
-
+        if(road.seeIfFree(index+1))
+        {
+            index++;
+        }
     }
 }
