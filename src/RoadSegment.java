@@ -13,11 +13,12 @@ public class RoadSegment implements Road
     int timer;
     boolean freeIndex;
     ArrayList<Vehicle> vehicleList;
-    ArrayList segment;
+    ArrayList<Integer> segment;
 
     public RoadSegment()
     {
-        segment = new ArrayList(10);
+        segment = new ArrayList<Integer>(10);
+        vehicleList = new ArrayList<Vehicle>();
         timer = 0;
     }
 
