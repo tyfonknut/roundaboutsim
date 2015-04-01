@@ -11,18 +11,7 @@ public class Roundabout implements Road
 
     public Roundabout(int roundaboutSize)
     {
-        ArrayList<Position> roundabout = new ArrayList<Position>(roundaboutSize);
-        ArrayList<RoadSegment> roadSegments = new ArrayList<RoadSegment>();
 
-        for(int i = 0; i <= roundaboutSize; i++)
-        {
-            if(i%10 == 0)
-            {
-                Position position = roundabout.get(i);
-                position.setIntersection();
-
-            }
-        }
     }
 
 

@@ -8,9 +8,6 @@ import java.util.ListIterator;
  */
 public class RoadSegment implements Road
 {
-    int speedLimit;
-    int intersection;
-    int timer;
     boolean freeIndex;
     ArrayList<Vehicle> vehicleList;
     ArrayList<Integer> segment;
@@ -19,7 +16,6 @@ public class RoadSegment implements Road
     {
         segment = new ArrayList<Integer>(10);
         vehicleList = new ArrayList<Vehicle>();
-        timer = 0;
     }
 
     public void spawnVehicle()
