@@ -7,14 +7,14 @@ import java.util.ArrayList;
 public class Roundabout implements Road
 {
     VehicleList vehicleList;
-    ArrayList<Integer> roundabout;
+    ArrayList<Vehicle> roundabout;
 
     Road segment;
 
     public Roundabout(int roundaboutSize, VehicleList list)
     {
         vehicleList = list;
-        roundabout = new ArrayList<Integer>(roundaboutSize);
+        roundabout = new ArrayList<Vehicle>(roundaboutSize);
 
         for(int i = 0;i <= roundaboutSize;i++)
         {
