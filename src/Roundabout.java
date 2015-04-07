@@ -23,6 +23,11 @@ public class Roundabout implements Road
         }
     }
 
+    public boolean seeIfFree(int index)
+    {
+        return vehicleList.isItFree(index);
+    }
+
 
     public void spawnVehicle()
     {

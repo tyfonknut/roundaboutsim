@@ -3,11 +3,11 @@
  */
 public class Vehicle
 {
-    private RoadSegment road;
+    private Road road;
     private int index;
     private int nextIndex;
 
-    public Vehicle(RoadSegment road, int index)
+    public Vehicle(Road road, int index)
     {
         this.road = road;
         this.index = index;

@@ -3,4 +3,6 @@
  */
 public interface Road {
 
+    public boolean seeIfFree(int i);
+
 }
