@@ -12,6 +12,11 @@ public class Vehicle
 
     }
 
+    private void setIndex()
+    {
+        index = road.getVehicleIndex(this);
+    }
+
     protected void setRoad(Road road)
     {
         this.road = road;
@@ -22,10 +27,6 @@ public class Vehicle
         return index;
     }
 
-    public int getPosition()
-    {
-        road.
-    }
 
     public void act()
     {

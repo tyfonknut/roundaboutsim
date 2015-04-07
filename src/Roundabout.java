@@ -25,6 +25,11 @@ public class Roundabout implements Road
         }
     }
 
+    public int getVehicleIndex(Vehicle v)
+    {
+        return v.getIndex();
+    }
+
     public boolean seeIfFree(int index)
     {
         return vehicleList.isItFree(index);

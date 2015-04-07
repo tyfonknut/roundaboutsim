@@ -29,7 +29,7 @@ public class VehicleList {
         {
             vehicle.act();
             System.out.print("Vehicle number: " + list.indexOf(vehicle));
-            System.out.println(" On position: " + vehicle.getPosition());
+            System.out.println(" On position: " + vehicle.getIndex());
         }
 
     }

@@ -8,7 +8,7 @@ public class Program
         VehicleList list = new VehicleList();
         Roundabout roundabout = new Roundabout(100, list);
 
-        roundabout.simulate(20);
+        roundabout.simulate(10);
 
 
     }

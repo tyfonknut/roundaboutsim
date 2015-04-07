@@ -16,6 +16,11 @@ public class RoadSegment implements Road
         segment = new ArrayList<Vehicle>(10);
     }
 
+    public int getVehicleIndex(Vehicle v)
+    {
+        return segment.indexOf(v);
+    }
+
     public boolean seeIfFree(int index)
     {
        return vehicleList.isItFree(index);
