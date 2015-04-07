@@ -25,8 +25,4 @@ public class RoadSegment implements Road
     {
        return vehicleList.isItFree(index);
     }
-
-    public int getIndexForVehicle(Vehicle v){
-        return 0;
-    }
 }

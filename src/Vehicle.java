@@ -7,9 +7,9 @@ public class Vehicle
     private int index;
     private int nextIndex;
 
-    public Vehicle()
+    public Vehicle(Road road)
     {
-
+        this.road = road;
     }
 
     private void setIndex()

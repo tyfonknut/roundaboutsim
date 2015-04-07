@@ -12,9 +12,9 @@ public class VehicleList {
         list = new ArrayList<Vehicle>();
     }
 
-    public void spawnVehicle()
+    public void spawnVehicle(RoadSegment road)
     {
-        Vehicle vehicle = new Vehicle();
+        Vehicle vehicle = new Vehicle(road);
         addVehicle(vehicle);
     }
 
@@ -23,7 +23,8 @@ public class VehicleList {
         list.add(v);
     }
 
-    public void simulateOneStep(){
+    public void simulateOneStep()
+    {
 
         for(Vehicle vehicle : list)
         {
