@@ -6,19 +6,19 @@ import java.util.ArrayList;
 public class RoadSegment implements Road
 {
     boolean freeIndex;
-    vehicleList list;
+    vehicleList roadlist;
     ArrayList<Integer> segment;
 
-    public RoadSegment()
+    public RoadSegment(vehicleList list)
     {
+        roadlist = list;
         segment = new ArrayList<Integer>(10);
-        list = new vehicleList();
     }
 
     public void spawnVehicle()
     {
         Vehicle vehicle = new Vehicle(this, 0);
-        list.addVehicle(vehicle);
+        roadlist.addVehicle(vehicle);
     }
 
     public void simulate(int numSteps)
@@ -32,12 +32,12 @@ public class RoadSegment implements Road
 
     public boolean seeIfFree(int index)
     {
-       return list.isItFree(index);
+       return roadlist.isItFree(index);
     }
 
     private void simulateOneStep()
     {
-        list.simulateOneStep();
+        roadlist.simulateOneStep();
     }
 
 }

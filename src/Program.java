@@ -5,7 +5,8 @@ public class Program
 {
     public static void main(String[] args)
     {
-        RoadSegment segment = new RoadSegment();
+        vehicleList list = new vehicleList();
+        RoadSegment segment = new RoadSegment(list);
 
         segment.simulate(10);
 
