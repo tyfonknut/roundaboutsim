@@ -7,9 +7,11 @@ public class RoadSegment implements Road
 {
     VehicleList roadlist;
     ArrayList<Integer> segment;
+    int connectionPoint;
 
-    public RoadSegment(VehicleList list)
+    public RoadSegment(int connectionPoint, VehicleList list)
     {
+        this.connectionPoint = connectionPoint;
         roadlist = list;
         segment = new ArrayList<Integer>(10);
     }

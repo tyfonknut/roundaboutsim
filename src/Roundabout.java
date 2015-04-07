@@ -18,7 +18,7 @@ public class Roundabout implements Road
         {
             if(i%25==0)
             {
-                RoadSegment segment = new RoadSegment(vehicleList);
+                RoadSegment segment = new RoadSegment(i, vehicleList);
             }
         }
     }
