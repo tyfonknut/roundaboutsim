@@ -46,6 +46,10 @@ public class Roundabout implements Road
         }
     }
 
+    public int getIndexForVehicle(Vehicle v){
+        return 0;
+    }
+
     private void simulateOneStep()
     {
         vehicleList.simulateOneStep();

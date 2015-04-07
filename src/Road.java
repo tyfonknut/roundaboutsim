@@ -5,4 +5,6 @@ public interface Road {
 
     public boolean seeIfFree(int i);
 
+    public int getIndexForVehicle(Vehicle v);
+
 }
