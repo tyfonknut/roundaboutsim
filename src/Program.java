@@ -6,6 +6,7 @@ public class Program
     public static void main(String[] args)
     {
         RoadSegment segment = new RoadSegment();
+
         segment.simulate(10);
 
 
