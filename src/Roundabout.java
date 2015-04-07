@@ -11,8 +11,28 @@ public class Roundabout implements Road
 
     public Roundabout(int roundaboutSize, VehicleList list)
     {
+        vehicleList = list;
         roundabout = new ArrayList<Integer>(roundaboutSize);
     }
 
 
+    public void spawnVehicle()
+    {
+        Vehicle vehicle = new Vehicle(this, 0);
+        vehicleList.addVehicle(vehicle);
+    }
+
+    public void simulate(int numSteps)
+    {
+        for(int step = 0;step < numSteps; step++)
+        {
+            spawnVehicle();
+            simulateOneStep();
+        }
+    }
+
+    private void simulateOneStep()
+    {
+        vehicleList.simulateOneStep();
+    }
 }

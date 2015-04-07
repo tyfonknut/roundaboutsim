@@ -6,9 +6,9 @@ public class Program
     public static void main(String[] args)
     {
         VehicleList list = new VehicleList();
-        RoadSegment segment = new RoadSegment(list);
+        Roundabout roundabout = new Roundabout(100, list);
 
-        segment.simulate(10);
+        roundabout.simulate(10);
 
 
     }
