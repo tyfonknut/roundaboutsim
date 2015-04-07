@@ -3,11 +3,11 @@ import java.util.ArrayList;
 /**
  * Created by Knut on 07.04.2015.
  */
-public class vehicleList {
+public class VehicleList {
 
     ArrayList<Vehicle> list;
 
-    public vehicleList(){
+    public VehicleList(){
 
         list = new ArrayList<Vehicle>();
     }

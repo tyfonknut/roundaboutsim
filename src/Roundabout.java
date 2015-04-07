@@ -6,9 +6,10 @@ import java.util.ArrayList;
  */
 public class Roundabout implements Road
 {
+    VehicleList vehicleList;
     ArrayList<Integer> roundabout;
 
-    public Roundabout(int roundaboutSize)
+    public Roundabout(int roundaboutSize, VehicleList list)
     {
         roundabout = new ArrayList<Integer>(roundaboutSize);
     }

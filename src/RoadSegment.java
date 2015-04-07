@@ -5,11 +5,10 @@ import java.util.ArrayList;
  */
 public class RoadSegment implements Road
 {
-    boolean freeIndex;
-    vehicleList roadlist;
+    VehicleList roadlist;
     ArrayList<Integer> segment;
 
-    public RoadSegment(vehicleList list)
+    public RoadSegment(VehicleList list)
     {
         roadlist = list;
         segment = new ArrayList<Integer>(10);
