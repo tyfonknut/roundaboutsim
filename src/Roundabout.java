@@ -26,7 +26,7 @@ public class Roundabout implements Road
 
     public void spawnVehicle()
     {
-        Vehicle vehicle = new Vehicle(this, 0);
+        Vehicle vehicle = new Vehicle(roadSegment, 0);
         vehicleList.addVehicle(vehicle);
     }
 

@@ -5,19 +5,19 @@ import java.util.ArrayList;
  */
 public class RoadSegment implements Road
 {
-    VehicleList roadlist;
+    VehicleList vehicleList;
     ArrayList<Integer> segment;
     int connectionPoint;
 
     public RoadSegment(int connectionPoint, VehicleList list)
     {
         this.connectionPoint = connectionPoint;
-        roadlist = list;
+        vehicleList = list;
         segment = new ArrayList<Integer>(10);
     }
 
     public boolean seeIfFree(int index)
     {
-       return roadlist.isItFree(index);
+       return vehicleList.isItFree(index);
     }
 }
