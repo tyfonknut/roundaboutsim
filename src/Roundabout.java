@@ -18,7 +18,7 @@ public class Roundabout implements Road
         {
             if(i%25==0)
             {
-                RoadSegment segment = new RoadSegment(vehicleList);
+                RoadSegment segment = new RoadSegment(i, vehicleList);
             }
         }
     }
@@ -31,7 +31,7 @@ public class Roundabout implements Road
 
     public void spawnVehicle()
     {
-        Vehicle vehicle = new Vehicle(this, 0);
+        Vehicle vehicle = new Vehicle(roadSegment, 0);
         vehicleList.addVehicle(vehicle);
     }
 
