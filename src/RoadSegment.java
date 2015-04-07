@@ -6,14 +6,14 @@ import java.util.ArrayList;
 public class RoadSegment implements Road
 {
     VehicleList vehicleList;
-    ArrayList<Integer> segment;
+    ArrayList<Vehicle> segment;
     int connectionPoint;
 
     public RoadSegment(int connectionPoint, VehicleList list)
     {
         this.connectionPoint = connectionPoint;
         vehicleList = list;
-        segment = new ArrayList<Integer>(10);
+        segment = new ArrayList<Vehicle>(10);
     }
 
     public boolean seeIfFree(int index)
