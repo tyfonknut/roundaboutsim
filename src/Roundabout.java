@@ -13,6 +13,14 @@ public class Roundabout implements Road
     {
         vehicleList = list;
         roundabout = new ArrayList<Integer>(roundaboutSize);
+
+        for(int i = 0;i <= roundaboutSize;i++)
+        {
+            if(i%25==0)
+            {
+                RoadSegment segment = new RoadSegment(vehicleList);
+            }
+        }
     }
 
 
