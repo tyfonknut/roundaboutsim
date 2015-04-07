@@ -9,6 +9,8 @@ public class Roundabout implements Road
     VehicleList vehicleList;
     ArrayList<Integer> roundabout;
 
+    Road segment;
+
     public Roundabout(int roundaboutSize, VehicleList list)
     {
         vehicleList = list;
@@ -18,7 +20,7 @@ public class Roundabout implements Road
         {
             if(i%25==0)
             {
-                RoadSegment segment = new RoadSegment(i, vehicleList);
+                segment = new RoadSegment(i, vehicleList);
             }
         }
     }
@@ -31,7 +33,7 @@ public class Roundabout implements Road
 
     public void spawnVehicle()
     {
-        Vehicle vehicle = new Vehicle(roadSegment, 0);
+        Vehicle vehicle = new Vehicle(segment, 0);
         vehicleList.addVehicle(vehicle);
     }
 
