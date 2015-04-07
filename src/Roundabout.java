@@ -30,18 +30,11 @@ public class Roundabout implements Road
         return vehicleList.isItFree(index);
     }
 
-
-    public void spawnVehicle()
-    {
-        Vehicle vehicle = new Vehicle(segment, 0);
-        vehicleList.addVehicle(vehicle);
-    }
-
     public void simulate(int numSteps)
     {
         for(int step = 0;step < numSteps; step++)
         {
-            spawnVehicle();
+            vehicleList.spawnVehicle();
             simulateOneStep();
         }
     }

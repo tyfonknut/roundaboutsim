@@ -12,7 +12,14 @@ public class VehicleList {
         list = new ArrayList<Vehicle>();
     }
 
-    public void addVehicle(Vehicle v){
+    public void spawnVehicle()
+    {
+        Vehicle vehicle = new Vehicle();
+        addVehicle(vehicle);
+    }
+
+    public void addVehicle(Vehicle v)
+    {
         list.add(v);
     }
 
@@ -22,7 +29,7 @@ public class VehicleList {
         {
             vehicle.act();
             System.out.print("Vehicle number: " + list.indexOf(vehicle));
-            System.out.println(" On position: " + vehicle.getIndex());
+            System.out.println(" On position: " + vehicle.getPosition());
         }
 
     }

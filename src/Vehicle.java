@@ -7,25 +7,24 @@ public class Vehicle
     private int index;
     private int nextIndex;
 
-    public Vehicle(Road road, int index)
+    public Vehicle()
+    {
+
+    }
+
+    protected void setRoad(Road road)
     {
         this.road = road;
-        this.index = index;
-    }
-
-    protected void setIndex(int index)
-    {
-        this.index = index;
-    }
-
-    protected void setNextIndex(int nextIndex)
-    {
-        this.nextIndex = nextIndex;
     }
 
     protected int getIndex()
     {
         return index;
+    }
+
+    public int getPosition()
+    {
+        road.
     }
 
     public void act()
