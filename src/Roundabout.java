@@ -6,12 +6,11 @@ import java.util.ArrayList;
  */
 public class Roundabout implements Road
 {
-    int speedLimit;
-
+    ArrayList<Integer> roundabout;
 
     public Roundabout(int roundaboutSize)
     {
-
+        roundabout = new ArrayList<Integer>(roundaboutSize);
     }
 
 
