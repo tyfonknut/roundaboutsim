@@ -44,7 +44,9 @@ public class RoadSegment implements Road
         if(getVehicleIndex(v) == 9){
             v.setRoad(round);
             //TODO: Sette koblingspunktet for rundkjøringen for kjøretøy.
-            //v.setIndex(connectionPoint);
+            round.insertVehicle(connectionPoint,v);
+            removeVehicle(getVehicleIndex(v));
+            v.setIndex();
         }
         else {
             insertVehicle(getVehicleIndex(v) + 1, v);

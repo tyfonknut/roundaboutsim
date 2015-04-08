@@ -20,6 +20,11 @@ public class Roundabout implements Road
         return java.util.Arrays.asList(roundabout).indexOf(v);
     }
 
+    public void insertVehicle(int index, Vehicle v)
+    {
+        roundabout[index] = v;
+    }
+
     public void moveVehicle(Vehicle v)
     {
         roundabout[getVehicleIndex(v)+1] = v;
