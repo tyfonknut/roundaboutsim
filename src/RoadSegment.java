@@ -23,6 +23,10 @@ public class RoadSegment implements Road
         return java.util.Arrays.asList(segment).indexOf(v);
     }
 
+    public int getConnectionPoint(){
+        return connectionPoint;
+    }
+
     public void insertVehicle(int index, Vehicle v)
     {
         segment[index] = v;
