@@ -27,8 +27,8 @@ public class Roundabout implements Road
 
     public void moveVehicle(Vehicle v)
     {
-        roundabout[getVehicleIndex(v)+1] = v;
-        roundabout[getVehicleIndex(v)] = null;
+        roundabout[getVehicleIndex(v)] = v;
+        roundabout[getVehicleIndex(v)-1] = null;
         v.setIndex();
     }
 

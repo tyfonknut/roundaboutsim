@@ -14,17 +14,17 @@ public class Simulator
     public Simulator(int roundaboutSize, VehicleList list)
     {
         vehicleList = list;
-        Roundabout rondabout = new Roundabout(roundaboutSize, list);
+        Roundabout roundabout = new Roundabout(roundaboutSize, list);
         innRoads = new ArrayList<RoadSegment>(50);
         outRoads = new ArrayList<RoadSegment>(50);
 
-        for(int i = 0;i <= roundaboutSize;i++)
+        for(int i = 0;i < roundaboutSize;i++)
         {
             if(i%25==0)
             {
-                segment = new RoadSegment(i, vehicleList, rondabout);
+                segment = new RoadSegment(i+1, vehicleList, roundabout);
                 innRoads.add(segment);
-                segment = new RoadSegment(i-1, vehicleList, rondabout);
+                segment = new RoadSegment(i, vehicleList, roundabout);
                 outRoads.add(segment);
             }
         }
