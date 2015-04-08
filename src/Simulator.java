@@ -15,6 +15,8 @@ public class Simulator
     {
         vehicleList = list;
         Roundabout rondabout = new Roundabout(roundaboutSize, list);
+        innRoads = new ArrayList<RoadSegment>(50);
+        outRoads = new ArrayList<RoadSegment>(50);
 
         for(int i = 0;i <= roundaboutSize;i++)
         {
@@ -30,9 +32,9 @@ public class Simulator
 
     public void simulate(int numSteps)
     {
+        vehicleList.spawnVehicle(segment, speedLimit);
         for(int step = 0;step < numSteps; step++)
         {
-            vehicleList.spawnVehicle(segment, speedLimit);
             simulateOneStep();
         }
     }

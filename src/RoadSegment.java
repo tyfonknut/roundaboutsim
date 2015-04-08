@@ -23,6 +23,7 @@ public class RoadSegment implements Road
 
     public void moveVehicle(Vehicle v)
     {
+
         segment.add(v.getIndex()+1, v);
         segment.remove(v.getIndex());
         v.setIndex();

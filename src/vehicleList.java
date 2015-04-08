@@ -9,7 +9,7 @@ public class VehicleList {
 
     public VehicleList(){
 
-        list = new ArrayList<Vehicle>();
+        list = new ArrayList<Vehicle>(100);
     }
 
     public void spawnVehicle(RoadSegment road, int speedLimit)
@@ -29,7 +29,8 @@ public class VehicleList {
         {
             vehicle.act();
             System.out.print("Vehicle number: " + list.indexOf(vehicle));
-            System.out.println(" On position: " + vehicle.getIndex());
+            System.out.print(" On position: " + vehicle.getIndex());
+            System.out.println(" With distance: " + vehicle.getDistance());
         }
     }
 }

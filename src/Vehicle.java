@@ -16,6 +16,11 @@ public class Vehicle
         this.speedLimit = speedLimit;
     }
 
+    public int getDistance()
+    {
+        return distance;
+    }
+
     public void setIndex()
     {
         index = road.getVehicleIndex(this);
@@ -33,21 +38,21 @@ public class Vehicle
 
     public void act()
     {
-        if(road.seeIfFree(index+1))
+        if(road.seeIfFree(index+4))
         {
-            speed = 2;
-        }
-        else if(road.seeIfFree(index+2))
-        {
-            speed = 4;
+            speed = 8;
         }
         else if(road.seeIfFree(index+3))
         {
             speed = 6;
         }
-        else if(road.seeIfFree(index+4))
+        else if(road.seeIfFree(index+2))
         {
-            speed = 8;
+            speed = 4;
+        }
+        else if(road.seeIfFree(index+1))
+        {
+            speed = 2;
         }
 
         distance = distance + speed;
