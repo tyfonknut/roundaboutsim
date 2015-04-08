@@ -41,10 +41,15 @@ public class RoadSegment implements Road
     public boolean seeIfFree(int index)
     {
         boolean isFree = false;
-        if(segment[index] == null)
+
+        if(index < segment.length)
         {
-            isFree = true;
+            if(segment[index] == null)
+            {
+                isFree = true;
+            }
         }
+
         return isFree;
     }
 }
