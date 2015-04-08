@@ -8,7 +8,7 @@ public class Program
         VehicleList list = new VehicleList();
         Simulator simulator = new Simulator(100, list);
 
-        simulator.simulate(100);
+        simulator.simulate(200);
 
 
     }

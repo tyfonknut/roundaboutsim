@@ -27,11 +27,21 @@ public class Roundabout implements Road
 
     public void moveVehicle(Vehicle v)
     {
-        //if(v.getConnection() == v.getIndex()){
+        if(v.getConnection() == v.getIndex())
+        {
+
             //todo bruk connection til å hente utsegmentet som er assosiert med punktet.
-        //}
-        roundabout[getVehicleIndex(v)] = v;
-        roundabout[getVehicleIndex(v)-1] = null;
+        }
+        if(v.getIndex()+1 == 100)
+        {
+            System.out.println("Vehicle: " + v.getIndex());
+            roundabout[getVehicleIndex(v) + 1 - 100] = v;
+        }
+        else
+        {
+            roundabout[getVehicleIndex(v) + 1] = v;
+        }
+        roundabout[getVehicleIndex(v)] = null;
         v.setIndex();
     }
 

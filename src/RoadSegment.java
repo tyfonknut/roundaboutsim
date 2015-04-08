@@ -32,24 +32,26 @@ public class RoadSegment implements Road
         segment[index] = v;
     }
 
-    public void removeVehicle(int index)
-    {
-        segment[index] = null;
-    }
-
     public void moveVehicle(Vehicle v)
     {
-        if(getVehicleIndex(v) == 9)
+        if(v.getIndex() == 9)
         {
-            v.setRoad(round);
-            round.insertVehicle(connectionPoint,v);
-            removeVehicle(getVehicleIndex(v));
-            v.setIndex();
+            if(round.seeIfFree(connectionPoint))
+            {
+                round.roundabout[connectionPoint] = v;
+                segment[getVehicleIndex(v)] = null;
+                v.setRoad(round);
+                v.setIndex();
+                System.out.print("Vehicle number: " + vehicleList.list.indexOf(v));
+                System.out.print(" Just entered segment: " + v.getRoad());
+                System.out.print(" On position: " + v.getIndex());
+                System.out.println(" At speed: " + v.getSpeed());
+            }
         }
         else
         {
-            insertVehicle(getVehicleIndex(v) + 1, v);
-            removeVehicle(getVehicleIndex(v));
+            segment[getVehicleIndex(v)+1] = v;
+            segment[getVehicleIndex(v)] = null;
             v.setIndex();
         }
     }

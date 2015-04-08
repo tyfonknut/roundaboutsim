@@ -26,6 +26,11 @@ public class Vehicle
         speed = 5;
     }
 
+    public int getSpeed()
+    {
+        return speed;
+    }
+
     public int getDistance()
     {
         return distance;
@@ -51,10 +56,15 @@ public class Vehicle
         return index;
     }
 
-    public int getConnection(){return connectionPoint; }
+    public int getConnection()
+    {
+        return connectionPoint;
+    }
 
     public void act()
     {
+        setIndex();
+
         if(road.seeIfFree(index+4))
         {
             if(speed < 7)
@@ -99,10 +109,17 @@ public class Vehicle
                 speed--;
             }
         }
+        else
+        {
+            if(speed > 1)
+            {
+                speed--;
+            }
+        }
 
         distance = distance + speed;
 
-        if(distance > 10)
+        if(distance >= 10)
         {
             road.moveVehicle(this);
             distance = distance - 10;
