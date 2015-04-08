@@ -34,12 +34,12 @@ public class Roundabout implements Road
 
     public boolean seeIfFree(int index)
     {
-        boolean isFree = true;
-        for(Vehicle vehicle : roundabout)
+        boolean isFree = false;
+        if(index < roundabout.length)
         {
-            if(vehicle.getIndex() == index)
+            if(roundabout[index] == null)
             {
-                isFree = false;
+                isFree = true;
             }
         }
         return isFree;
