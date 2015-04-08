@@ -21,8 +21,23 @@ public class RoadSegment implements Road
         return segment.indexOf(v);
     }
 
+    public void moveVehicle(Vehicle v)
+    {
+        segment.add(v.getIndex()+1, v);
+        segment.remove(v.getIndex());
+        v.setIndex();
+    }
+
     public boolean seeIfFree(int index)
     {
-       return vehicleList.isItFree(index);
+        boolean isFree = true;
+        for(Vehicle vehicle : segment)
+        {
+            if(vehicle.getIndex() == index)
+            {
+                isFree = false;
+            }
+        }
+        return isFree;
     }
 }

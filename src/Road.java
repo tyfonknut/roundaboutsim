@@ -5,8 +5,10 @@ import java.util.ArrayList;
  */
 public interface Road {
 
-    public boolean seeIfFree(int i);
+    public boolean seeIfFree(int index);
 
     public int getVehicleIndex(Vehicle v);
+
+    public void moveVehicle(Vehicle v);
 
 }

@@ -12,9 +12,9 @@ public class VehicleList {
         list = new ArrayList<Vehicle>();
     }
 
-    public void spawnVehicle(RoadSegment road)
+    public void spawnVehicle(RoadSegment road, int speedLimit)
     {
-        Vehicle vehicle = new Vehicle(road);
+        Vehicle vehicle = new Vehicle(road, speedLimit);
         addVehicle(vehicle);
     }
 
@@ -25,27 +25,11 @@ public class VehicleList {
 
     public void simulateOneStep()
     {
-
         for(Vehicle vehicle : list)
         {
             vehicle.act();
             System.out.print("Vehicle number: " + list.indexOf(vehicle));
             System.out.println(" On position: " + vehicle.getIndex());
         }
-
     }
-
-    public Boolean isItFree(int index){
-
-        boolean isFree = true;
-        for(Vehicle vehicle : list)
-        {
-            if(vehicle.getIndex() == index)
-            {
-                isFree = false;
-            }
-        }
-        return isFree;
-    }
-
 }

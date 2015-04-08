@@ -6,13 +6,16 @@ public class Vehicle
     private Road road;
     private int index;
     private int nextIndex;
+    private int speedLimit;
+    private int speed;
 
-    public Vehicle(Road road)
+    public Vehicle(Road road, int speedLimit)
     {
         this.road = road;
+        this.speedLimit = speedLimit;
     }
 
-    private void setIndex()
+    public void setIndex()
     {
         index = road.getVehicleIndex(this);
     }
@@ -27,14 +30,17 @@ public class Vehicle
         return index;
     }
 
-
     public void act()
     {
         if(road.seeIfFree(index+1))
         {
-            index++;
+            speed++;
         }
 
-
+        if(speed == speedLimit)
+        {
+            road.moveVehicle(this);
+            speed = 0;
+        }
     }
 }

@@ -9,6 +9,7 @@ public class Simulator
     RoadSegment segment;
     ArrayList<RoadSegment> innRoads;
     ArrayList<RoadSegment> outRoads;
+    int speedLimit = 10;
 
     public Simulator(int roundaboutSize, VehicleList list)
     {
@@ -31,7 +32,7 @@ public class Simulator
     {
         for(int step = 0;step < numSteps; step++)
         {
-            vehicleList.spawnVehicle(segment);
+            vehicleList.spawnVehicle(segment, speedLimit);
             simulateOneStep();
         }
     }
