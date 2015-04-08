@@ -30,13 +30,10 @@ public class RoadSegment implements Road
 
     public boolean seeIfFree(int index)
     {
-        boolean isFree = true;
-        for(Vehicle vehicle : segment)
+        boolean isFree = false;
+        if(segment[index] == null)
         {
-            if(vehicle.getIndex() == index)
-            {
-                isFree = false;
-            }
+            isFree = true;
         }
         return isFree;
     }
