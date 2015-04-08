@@ -8,6 +8,7 @@ public class Vehicle
     private int nextIndex;
     private int speedLimit;
     private int speed;
+    private int distance;
 
     public Vehicle(Road road, int speedLimit)
     {
@@ -34,13 +35,27 @@ public class Vehicle
     {
         if(road.seeIfFree(index+1))
         {
-            speed++;
+            speed = 2;
+        }
+        else if(road.seeIfFree(index+2))
+        {
+            speed = 4;
+        }
+        else if(road.seeIfFree(index+3))
+        {
+            speed = 6;
+        }
+        else if(road.seeIfFree(index+4))
+        {
+            speed = 8;
         }
 
-        if(speed == speedLimit)
+        distance = distance + speed;
+
+        if(distance > 10)
         {
             road.moveVehicle(this);
-            speed = 0;
+            distance = 0;
         }
     }
 }
