@@ -32,7 +32,7 @@ public class Simulator
 
     public void simulate(int numSteps)
     {
-        vehicleList.spawnVehicle(segment, speedLimit);
+        vehicleList.spawnVehicle(innRoads, speedLimit);
         for(int step = 0;step < numSteps; step++)
         {
             simulateOneStep();

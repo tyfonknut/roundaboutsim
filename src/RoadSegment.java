@@ -6,26 +6,25 @@ import java.util.ArrayList;
 public class RoadSegment implements Road
 {
     VehicleList vehicleList;
-    ArrayList<Vehicle> segment;
+    Vehicle[] segment;
     int connectionPoint;
 
     public RoadSegment(int connectionPoint, VehicleList list)
     {
         this.connectionPoint = connectionPoint;
         vehicleList = list;
-        segment = new ArrayList<Vehicle>(10);
+        segment = new Vehicle[10];
     }
 
     public int getVehicleIndex(Vehicle v)
     {
-        return segment.indexOf(v);
+        return java.util.Arrays.asList(segment).indexOf(v);
     }
 
     public void moveVehicle(Vehicle v)
     {
-
-        segment.add(v.getIndex()+1, v);
-        segment.remove(v.getIndex());
+        segment[getVehicleIndex(v)+1] = v;
+        segment[getVehicleIndex(v)] = null;
         v.setIndex();
     }
 

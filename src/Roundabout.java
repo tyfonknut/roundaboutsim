@@ -7,23 +7,23 @@ import java.util.ArrayList;
 public class Roundabout implements Road
 {
     VehicleList vehicleList;
-    ArrayList<Vehicle> roundabout;
+    Vehicle[] roundabout;
 
     public Roundabout(int roundaboutSize, VehicleList list)
     {
         vehicleList = list;
-        roundabout = new ArrayList<Vehicle>(roundaboutSize);
+        roundabout = new Vehicle[roundaboutSize];
     }
 
     public int getVehicleIndex(Vehicle v)
     {
-        return v.getIndex();
+        return java.util.Arrays.asList(roundabout).indexOf(v);
     }
 
     public void moveVehicle(Vehicle v)
     {
-        roundabout.add(v.getIndex()+1, v);
-        roundabout.remove(v.getIndex());
+        roundabout[getVehicleIndex(v)+1] = v;
+        roundabout[getVehicleIndex(v)] = null;
         v.setIndex();
     }
 

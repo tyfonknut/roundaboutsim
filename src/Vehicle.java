@@ -26,14 +26,19 @@ public class Vehicle
         index = road.getVehicleIndex(this);
     }
 
-    protected void setRoad(Road road)
+    public void setRoad(Road road)
     {
         this.road = road;
     }
 
-    protected int getIndex()
+    public Road getRoad()
     {
-        return index;
+        return road;
+    }
+
+    public int getIndex()
+    {
+        return index = road.getVehicleIndex(this);
     }
 
     public void act()

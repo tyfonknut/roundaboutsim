@@ -12,10 +12,13 @@ public class VehicleList {
         list = new ArrayList<Vehicle>(100);
     }
 
-    public void spawnVehicle(RoadSegment road, int speedLimit)
+    public void spawnVehicle(ArrayList<RoadSegment> innRoads, int speedLimit)
     {
-        Vehicle vehicle = new Vehicle(road, speedLimit);
-        addVehicle(vehicle);
+        for(RoadSegment segment : innRoads)
+        {
+            Vehicle vehicle = new Vehicle(segment, speedLimit);
+            addVehicle(vehicle);
+        }
     }
 
     public void addVehicle(Vehicle v)
@@ -29,6 +32,7 @@ public class VehicleList {
         {
             vehicle.act();
             System.out.print("Vehicle number: " + list.indexOf(vehicle));
+            System.out.print(" In segment: " + vehicle.getRoad());
             System.out.print(" On position: " + vehicle.getIndex());
             System.out.println(" With distance: " + vehicle.getDistance());
         }
