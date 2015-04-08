@@ -9,11 +9,20 @@ public class Vehicle
     private int speedLimit;
     private int speed;
     private int distance;
+    private int connectionPoint;
 
     public Vehicle(Road road, int speedLimit)
     {
         this.road = road;
         this.speedLimit = speedLimit;
+        speed = 5;
+    }
+
+    public Vehicle(Road road, int speedLimit, int connectionPoint)
+    {
+        this.road = road;
+        this.speedLimit = speedLimit;
+        this.connectionPoint = connectionPoint;
         speed = 5;
     }
 
@@ -41,6 +50,8 @@ public class Vehicle
     {
         return index;
     }
+
+    public int getConnection(){return connectionPoint; }
 
     public void act()
     {

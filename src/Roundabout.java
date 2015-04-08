@@ -27,6 +27,9 @@ public class Roundabout implements Road
 
     public void moveVehicle(Vehicle v)
     {
+        //if(v.getConnection() == v.getIndex()){
+            //todo bruk connection til å hente utsegmentet som er assosiert med punktet.
+        //}
         roundabout[getVehicleIndex(v)] = v;
         roundabout[getVehicleIndex(v)-1] = null;
         v.setIndex();
