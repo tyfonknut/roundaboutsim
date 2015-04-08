@@ -7,13 +7,21 @@ public class RoadSegment implements Road
 {
     VehicleList vehicleList;
     Vehicle[] segment;
-    int connectionPoint;
+    public int connectionPoint;
+    Roundabout round = null;
 
     public RoadSegment(int connectionPoint, VehicleList list)
     {
         this.connectionPoint = connectionPoint;
         vehicleList = list;
         segment = new Vehicle[10];
+    }
+
+    public RoadSegment(int connectionPoint, VehicleList list, Roundabout round){
+        this.connectionPoint = connectionPoint;
+        vehicleList = list;
+        segment = new Vehicle[10];
+        this.round = round;
     }
 
     public int getVehicleIndex(Vehicle v)
@@ -33,9 +41,16 @@ public class RoadSegment implements Road
 
     public void moveVehicle(Vehicle v)
     {
-        insertVehicle(getVehicleIndex(v)+1, v);
-        removeVehicle(getVehicleIndex(v));
-        v.setIndex();
+        if(getVehicleIndex(v) == 9){
+            v.setRoad(round);
+            //TODO: Sette koblingspunktet for rundkjøringen for kjøretøy.
+            //v.setIndex(connectionPoint);
+        }
+        else {
+            insertVehicle(getVehicleIndex(v) + 1, v);
+            removeVehicle(getVehicleIndex(v));
+            v.setIndex();
+        }
     }
 
     public boolean seeIfFree(int index)

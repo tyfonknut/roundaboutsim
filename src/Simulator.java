@@ -22,9 +22,9 @@ public class Simulator
         {
             if(i%25==0)
             {
-                segment = new RoadSegment(i, vehicleList);
+                segment = new RoadSegment(i, vehicleList, rondabout);
                 innRoads.add(segment);
-                segment = new RoadSegment(i-1, vehicleList);
+                segment = new RoadSegment(i-1, vehicleList, rondabout);
                 outRoads.add(segment);
             }
         }
