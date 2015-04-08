@@ -38,7 +38,7 @@ public class Vehicle
 
     public int getIndex()
     {
-        return index = road.getVehicleIndex(this);
+        return index;
     }
 
     public void act()

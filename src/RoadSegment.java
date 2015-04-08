@@ -21,10 +21,20 @@ public class RoadSegment implements Road
         return java.util.Arrays.asList(segment).indexOf(v);
     }
 
+    public void insertVehicle(int index, Vehicle v)
+    {
+        segment[index] = v;
+    }
+
+    public void removeVehicle(int index)
+    {
+        segment[index] = null;
+    }
+
     public void moveVehicle(Vehicle v)
     {
-        segment[getVehicleIndex(v)+1] = v;
-        segment[getVehicleIndex(v)] = null;
+        insertVehicle(getVehicleIndex(v)+1, v);
+        removeVehicle(getVehicleIndex(v));;
         v.setIndex();
     }
 

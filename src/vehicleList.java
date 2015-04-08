@@ -3,13 +3,15 @@ import java.util.ArrayList;
 /**
  * Created by Knut on 07.04.2015.
  */
-public class VehicleList {
+public class VehicleList
+{
 
     ArrayList<Vehicle> list;
 
-    public VehicleList(){
+    public VehicleList()
+    {
 
-        list = new ArrayList<Vehicle>(100);
+        list = new ArrayList<Vehicle>();
     }
 
     public void spawnVehicle(ArrayList<RoadSegment> innRoads, int speedLimit)
@@ -18,6 +20,7 @@ public class VehicleList {
         {
             Vehicle vehicle = new Vehicle(segment, speedLimit);
             addVehicle(vehicle);
+            segment.insertVehicle(0, vehicle);
         }
     }
 
