@@ -65,7 +65,7 @@ public class Vehicle
         if(distance > 10)
         {
             road.moveVehicle(this);
-            distance = 0;
+            distance = distance - 10;
         }
     }
 }

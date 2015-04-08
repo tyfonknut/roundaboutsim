@@ -34,14 +34,13 @@ public class RoadSegment implements Road
     public void moveVehicle(Vehicle v)
     {
         insertVehicle(getVehicleIndex(v)+1, v);
-        removeVehicle(getVehicleIndex(v));;
+        removeVehicle(getVehicleIndex(v));
         v.setIndex();
     }
 
     public boolean seeIfFree(int index)
     {
         boolean isFree = false;
-
         if(index < segment.length)
         {
             if(segment[index] == null)
@@ -49,7 +48,6 @@ public class RoadSegment implements Road
                 isFree = true;
             }
         }
-
         return isFree;
     }
 }
