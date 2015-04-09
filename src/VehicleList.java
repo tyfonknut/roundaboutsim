@@ -17,12 +17,12 @@ public class VehicleList
         list = new ArrayList<Vehicle>();
     }
 
-    public void spawnVehicle(ArrayList<RoadSegment> innRoads, int speedLimit)
+    public void spawnVehicle(ArrayList<RoadSegment> innRoads, ArrayList<RoadSegment> outRoads, int speedLimit)
     {
         r = new Random();
         for(RoadSegment segment : innRoads)
         {
-            Vehicle vehicle = new Vehicle(segment, speedLimit, innRoads.get(r.nextInt(4)).getConnectionPoint());
+            Vehicle vehicle = new Vehicle(segment, speedLimit, outRoads.get(r.nextInt(4)).getConnectionPoint());
             addVehicle(vehicle);
             segment.insertVehicle(0, vehicle);
         }
