@@ -28,6 +28,8 @@ public class Simulator
                 outRoads.add(segment);
             }
         }
+
+        roundabout.sendOutRoads(outRoads);
     }
 
     public void simulate(int numSteps)

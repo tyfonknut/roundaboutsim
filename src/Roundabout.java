@@ -8,11 +8,16 @@ public class Roundabout implements Road
 {
     VehicleList vehicleList;
     Vehicle[] roundabout;
+    ArrayList<RoadSegment> outRoads;
 
     public Roundabout(int roundaboutSize, VehicleList list)
     {
         vehicleList = list;
         roundabout = new Vehicle[roundaboutSize];
+    }
+
+    public void sendOutRoads(ArrayList<RoadSegment> outRoads) {
+        this.outRoads = outRoads;
     }
 
     public int getVehicleIndex(Vehicle v)
@@ -29,8 +34,15 @@ public class Roundabout implements Road
     {
         if(v.getConnection() == v.getIndex())
         {
+            for(RoadSegment road: outRoads){
+                if(road.connectionPoint == v.getConnection()){
+                    road.insertVehicle(0,v);
+                    roundabout[v.getIndex()] = null;
+                    v.setRoad(road);
+                    v.setIndex();
 
-            //todo bruk connection til å hente utsegmentet som er assosiert med punktet.
+                }
+            }
         }
         if(v.getIndex()+1 == 100)
         {
