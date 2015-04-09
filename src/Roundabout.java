@@ -44,16 +44,21 @@ public class Roundabout implements Road
                 }
             }
         }
-        if(v.getIndex()+1 == 100)
+
+        //System.out.println("Vehicle: " + v.getIndex());
+        if(v.getIndex() == 99)
         {
-            System.out.println("Vehicle: " + v.getIndex());
-            roundabout[getVehicleIndex(v) + 1 - 100] = v;
+            roundabout[0] = v;
+            roundabout[99] = null;
         }
         else
         {
-            roundabout[getVehicleIndex(v) + 1] = v;
+            int prevIndex = getVehicleIndex(v);
+            roundabout[prevIndex + 1] = v;
+            roundabout[prevIndex] = null;
+
         }
-        roundabout[getVehicleIndex(v)] = null;
+
         v.setIndex();
     }
 
