@@ -67,6 +67,13 @@ public class Roundabout implements Road
                 isFree = true;
             }
         }
+        if(index >= roundabout.length)
+        {
+            if(roundabout[index - 100] == null)
+            {
+                isFree = true;
+            }
+        }
         return isFree;
     }
 }
