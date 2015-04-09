@@ -9,7 +9,7 @@ public class VehicleList
 
     ArrayList<Vehicle> list;
     Random r;
-    int i;
+    ArrayList<Vehicle> copyList;
 
     public VehicleList()
     {
@@ -44,13 +44,15 @@ public class VehicleList
 
     public void simulateOneStep()
     {
-        for(Vehicle vehicle : list)
+        copyList = new ArrayList<Vehicle>(list);
+
+        for(Vehicle vehicle : copyList)
         {
             vehicle.act();
-            //System.out.print("Vehicle number: " + list.indexOf(vehicle));
-            //System.out.print(" In segment: " + vehicle.getRoad());
-            //System.out.print(" On position: " + vehicle.getIndex());
-            //System.out.println(" With distance: " + vehicle.getDistance());
+            System.out.print("Vehicle number: " + list.indexOf(vehicle));
+            System.out.print(" In segment: " + vehicle.getRoad());
+            System.out.print(" On position: " + vehicle.getIndex());
+            System.out.println(" With distance: " + vehicle.getDistance());
         }
     }
 }
