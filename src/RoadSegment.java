@@ -36,8 +36,13 @@ public class RoadSegment implements Road
     {
         if(v.getIndex() == 9)
         {
-            if(round.seeIfFree(connectionPoint))
+            if (v.isLeaving())
             {
+                segment[getVehicleIndex(v)] = null;
+                System.out.println("Vehicle: " + v + " just left the system.");
+                vehicleList.removeVehicle(v);
+            }
+            else if (round.seeIfFree(connectionPoint)) {
                 round.roundabout[connectionPoint] = v;
                 segment[getVehicleIndex(v)] = null;
                 v.setRoad(round);

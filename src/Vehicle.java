@@ -10,13 +10,7 @@ public class Vehicle
     private int speed;
     private int distance;
     private int connectionPoint;
-
-    public Vehicle(Road road, int speedLimit)
-    {
-        this.road = road;
-        this.speedLimit = speedLimit;
-        speed = 5;
-    }
+    private boolean leaving;
 
     public Vehicle(Road road, int speedLimit, int connectionPoint)
     {
@@ -24,6 +18,18 @@ public class Vehicle
         this.speedLimit = speedLimit;
         this.connectionPoint = connectionPoint;
         speed = 5;
+        leaving = false;
+    }
+
+    public boolean isLeaving()
+    {
+        return leaving;
+    }
+
+    public void setLeaving()
+    {
+        leaving = true;
+        System.out.println("VEHICLE NUMBER: " + this + " IS LEAVING.");
     }
 
     public int getSpeed()

@@ -40,7 +40,11 @@ public class Roundabout implements Road
                     roundabout[v.getIndex()] = null;
                     v.setRoad(road);
                     v.setIndex();
-
+                    v.setLeaving();
+                    System.out.print("Vehicle number: " + vehicleList.list.indexOf(v));
+                    System.out.print(" Just entered segment: " + v.getRoad());
+                    System.out.print(" On position: " + v.getIndex());
+                    System.out.println(" At speed: " + v.getSpeed());
                 }
             }
         }
@@ -48,6 +52,8 @@ public class Roundabout implements Road
         {
             roundabout[0] = v;
             roundabout[99] = null;
+            System.out.println("Vehicle number: " + vehicleList.list.indexOf(v) + " Just crossed roundabout point 99");
+
         }
         else
         {

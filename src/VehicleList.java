@@ -22,15 +22,24 @@ public class VehicleList
         r = new Random();
         for(RoadSegment segment : innRoads)
         {
-            Vehicle vehicle = new Vehicle(segment, speedLimit, outRoads.get(r.nextInt(4)).getConnectionPoint());
+            int connectionPoint = outRoads.get(r.nextInt(4)).getConnectionPoint();
+            Vehicle vehicle = new Vehicle(segment, speedLimit, connectionPoint);
             addVehicle(vehicle);
             segment.insertVehicle(0, vehicle);
+            System.out.print("Spawned vehicle number: " + list.indexOf(vehicle));
+            System.out.print(" In segment: " + vehicle.getRoad());
+            System.out.println(" With target: " + connectionPoint);
         }
     }
 
     public void addVehicle(Vehicle v)
     {
         list.add(v);
+    }
+
+    public void removeVehicle(Vehicle v)
+    {
+        list.remove(v);
     }
 
     public void simulateOneStep()
