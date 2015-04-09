@@ -47,10 +47,10 @@ public class VehicleList
         for(Vehicle vehicle : list)
         {
             vehicle.act();
-            System.out.print("Vehicle number: " + list.indexOf(vehicle));
-            System.out.print(" In segment: " + vehicle.getRoad());
-            System.out.print(" On position: " + vehicle.getIndex());
-            System.out.println(" With distance: " + vehicle.getDistance());
+            //System.out.print("Vehicle number: " + list.indexOf(vehicle));
+            //System.out.print(" In segment: " + vehicle.getRoad());
+            //System.out.print(" On position: " + vehicle.getIndex());
+            //System.out.println(" With distance: " + vehicle.getDistance());
         }
     }
 }
